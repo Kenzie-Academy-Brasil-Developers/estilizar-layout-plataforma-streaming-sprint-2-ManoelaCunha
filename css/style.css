@@ -66,6 +66,7 @@ html, body, header, div, section, ul, li, figure, img, h2, h3, footer, button {
 
 	.pg-home__list img {
 		max-width: 186px;
+		border: 1px solid transparent;
 	}
 
 	.pg-home__list h3 {
