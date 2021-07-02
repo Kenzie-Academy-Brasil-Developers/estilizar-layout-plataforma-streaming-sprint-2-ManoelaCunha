@@ -17,12 +17,15 @@ html, body, header, div, section, ul, li, figure, img, h2, h3, footer, button {
     margin: 0;
     padding: 0;
     border: none;
+	list-style: none;
 }
 /* VARIÁVEIS */
 :root{
 	--theme-color1: #fff;
 	--theme-color2: #B3B3B3;
-	--theme-background: #141414;
+	--theme-color3: #342FF8;
+	--theme-color4: #333333;
+	--theme-background: #00002E;
 }
 
 /*BODY*/
@@ -32,13 +35,17 @@ html, body, header, div, section, ul, li, figure, img, h2, h3, footer, button {
 	}
 
 /*TOPO*/
-	header.topo{
-		width: 150px;
-    	margin: 25px auto;
+	header.topo {
+		display: grid;
+		justify-items: center;
+	}
+
+	.topo img {
+		width: 200px;
 	}
 
 /*PÁGINA INICIAL*/
-	div.pg-home{
+	div.pg-home {
 		max-width: 616px;
 		margin: 0 auto;
 	}
@@ -64,10 +71,6 @@ html, body, header, div, section, ul, li, figure, img, h2, h3, footer, button {
 		max-width: 186px;
 	}
 
-	.list__img:hover {
-		border: 1px solid var(--theme-color1);
-	}
-
 	.pg-home__list h3 {
 		font-weight: 200;
 		padding-top: 25px;
@@ -76,11 +79,32 @@ html, body, header, div, section, ul, li, figure, img, h2, h3, footer, button {
 		color: var(--theme-color2);
 	}
 
+	li:hover > figure > img.list__img {
+		border: 1px solid var(--theme-color1);
+		cursor: pointer;
+	}
+
+	li:hover > h3 {
+		color: var(--theme-color1);
+		cursor: pointer;
+	}
+
 	.addPerfil {
 		width: 186px;
 		display: grid;
 		justify-items: center;
 		align-items: flex-end;
+	}
+
+	.addPerfil img {
+		border-radius: 50%;
+	}
+
+	.addPerfil:hover > figure > img {
+		box-shadow: inset 0px 0px 1em var(--theme-color4);
+		border: 1px solid var(--theme-color1);
+		background-color: var(--theme-color1);
+		cursor: pointer;
 	}
 
 /*RODAPÉ*/
@@ -103,19 +127,19 @@ html, body, header, div, section, ul, li, figure, img, h2, h3, footer, button {
 	}
 
 	.pg-home__footer button:hover {
-		border: 1px solid var(--theme-color1);
-		color: var(--theme-color1);
+		border: 2px solid var(--theme-color3);
+		color: var(--theme-color3);
+		cursor: pointer;
 	}
 
 
 	@media only screen and (min-width: 800px) {
 
-		header.topo{
-			width: 150px;
-			margin: 25px;
+		header.topo {
+			justify-items: flex-start;
 		}
 
-		div.pg-home{
+		div.pg-home {
 			max-width: 858px;
 			margin: 0 auto;
 		}
@@ -126,9 +150,6 @@ html, body, header, div, section, ul, li, figure, img, h2, h3, footer, button {
 		}
 	
 		.pg-home__list {
-			display: flex;
-			justify-content: center;
 			flex-wrap: nowrap;
 		}
 	}
-
